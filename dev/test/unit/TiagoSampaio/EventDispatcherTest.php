@@ -4,6 +4,8 @@ declare(strict_types = 1);
 
 namespace TiagoSampaioTest\EventObserver;
 
+use TiagoSampaio\EventObserver\EventDispatcher;
+
 /**
  * Class EventDispatcherTest
  *
@@ -12,13 +14,13 @@ namespace TiagoSampaioTest\EventObserver;
 class EventDispatcherTest extends TestCase
 {
     /**
-     * @var \Frenet\Event\EventDispatcher
+     * @var EventDispatcher
      */
     private $object;
     
     protected function setUp()
     {
-        $this->object = $this->createObject(\TiagoSampaio\EventObserver\EventDispatcher::class);
+        $this->object = $this->createObject(EventDispatcher::class);
     }
     
     /**

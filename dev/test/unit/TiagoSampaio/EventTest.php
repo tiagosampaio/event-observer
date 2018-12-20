@@ -4,6 +4,8 @@ declare(strict_types = 1);
 
 namespace TiagoSampaioTest\EventObserver;
 
+use TiagoSampaio\EventObserver\Event;
+
 /**
  * Class EventTest
  *
@@ -12,13 +14,13 @@ namespace TiagoSampaioTest\EventObserver;
 class EventTest extends TestCase
 {
     /**
-     * @var \Frenet\Event\Event
+     * @var Event
      */
     private $object;
     
     protected function setUp()
     {
-        $this->object = $this->createObject(\TiagoSampaio\EventObserver\Event::class);
+        $this->object = $this->createObject(Event::class);
     }
     
     /**
@@ -26,14 +28,16 @@ class EventTest extends TestCase
      */
     public function eventSetterAndGetter()
     {
+        $eventName = 'this_is_an_test_event';
+        
         $data = [
             'key_one' => 1,
             'key_two' => 2,
         ];
         
-        $this->assertInstanceOf(\TiagoSampaio\EventObserver\Event::class, $this->object->setEvent('event_test', $data));
+        $this->assertInstanceOf(Event::class, $this->object->setEvent($eventName, $data));
         
-        $this->assertEquals('event_test', $this->object->getEventName());
+        $this->assertEquals($eventName, $this->object->getEventName());
         $this->assertEquals($data, $this->object->getData());
     }
 }
