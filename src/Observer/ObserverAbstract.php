@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 namespace TiagoSampaio\EventObserver\Observer;
 
 use TiagoSampaio\EventObserver\EventInterface;
