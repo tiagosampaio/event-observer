@@ -18,7 +18,7 @@ class EventDispatcherTest extends TestCase
      */
     private $object;
     
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->object = $this->createObject(EventDispatcher::class);
     }
